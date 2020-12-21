@@ -6,6 +6,9 @@ const {
 } = require('clean-webpack-plugin')
 
 module.exports = {
+//   node: {
+//   fs: 'empty'
+// },
   entry: './src/client/index.js',
   mode: 'development',
   devtool: 'source-map',
@@ -15,6 +18,9 @@ module.exports = {
      library: 'Client'
  },
   module: {
+    node: {
+  fs: 'empty'
+},
     rules: [{
         test: '/\.js$/',
         exclude: /node_modules/,

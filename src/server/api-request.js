@@ -1,8 +1,5 @@
 // let baseURL = "https://api.meaningcloud.com/sentiment-2.1?key=";
-var textapi = {
-  key: process
-};
-console.log('dfgg', textapi)
+
 //
 // const key = textapi.application_key;
 //
@@ -18,12 +15,14 @@ console.log('dfgg', textapi)
 //     console.log("error", error);
 //   }
 // }
-
+const dotenv = require('dotenv');
+dotenv.config();
 /* Function to GET Web API Data*/
 const getApiData = async (text) => {
   const baseURL = 'https://api.meaningcloud.com/sentiment-2.1'
   // const key = textapi.key;
-  const key = '04c0c6e2c2ef313ec90dbb07973b5c19';
+  const key = process.env.KEY;
+  console.log(key);
   const of = 'json';
   const lang = 'en';
   const url = `${baseURL}?key=${key}&of=${of}&txt=${text}&lang=${lang}`;

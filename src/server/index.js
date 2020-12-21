@@ -1,12 +1,15 @@
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const mockAPIResponse = require('./mockAPI.js');
+const api = require('./api-request.js')
+
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const dotenv = require('dotenv');
+
 const app = express()
 
-dotenv.config();
+
+
 app.use(express.static('dist'))
 app.use(cors())
 app.use(bodyParser.json());
@@ -32,7 +35,7 @@ app.get('/test', function (req, res) {
 })
 
 app.get("/get", function (req, res){
-  res.send(projectData)
+  res.send(projectData);
 })
 
 app.post("/", function (req, res){
