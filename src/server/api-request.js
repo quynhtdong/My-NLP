@@ -19,10 +19,8 @@ const dotenv = require('dotenv');
 dotenv.config();
 /* Function to GET Web API Data*/
 const getApiData = async (text) => {
-  const baseURL = 'https://api.meaningcloud.com/sentiment-2.1'
-  // const key = textapi.key;
+  const baseURL = 'https://api.meaningcloud.com/sentiment-2.1';
   const key = process.env.KEY;
-  console.log(key);
   const of = 'json';
   const lang = 'en';
   const url = `${baseURL}?key=${key}&of=${of}&txt=${text}&lang=${lang}`;

@@ -1,9 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
 //   node: {
@@ -18,10 +16,8 @@ module.exports = {
      library: 'Client'
  },
   module: {
-    node: {
-  fs: 'empty'
-},
-    rules: [{
+    rules: [
+      {
         test: '/\.js$/',
         exclude: /node_modules/,
         loader: "babel-loader"
